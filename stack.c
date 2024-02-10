@@ -66,3 +66,12 @@ void printstack(stack_t* s) {
     current = current->next;
   }
 }
+
+/**
+ * Checks if the stack is empty
+ * @param s pointer to a stack_t
+ * @return 1 if the stack is empty, 0 otherwise
+ */
+int isEmpty(stack_t* s) {
+  return (s->size == 0) ? 1 : 0;
+}

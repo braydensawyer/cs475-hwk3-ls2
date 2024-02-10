@@ -11,9 +11,16 @@ int main(int argc, char* argv[]) {
 	// stack stores the lines to print out
 	stack_t *s = initstack();
 
-	push(s, "Hello1");
-	push(s, "Hello2");
-	push(s, "Hello3");
+	if (argv[1]==NULL) {
+        printf("Usage: %s <path> [exact-match-pattern]\n", argv[0]);
+    }
+    else if(argv[2] == NULL){
+		m1(argv[1], s, 0);
+
+	}
+	else {
+		m2(argv[1], argv[2], s, 0);
+	}
 
 	// print stack
 	printstack(s);
